@@ -1,7 +1,7 @@
 .table {
   display: grid;
-  grid-template-columns: 32px 144px 32px 700px 32px 144px 32px 1fr;
-  grid-template-rows: auto 32px 144px 32px 458px 32px 144px 32px auto;
+  grid-template-columns: 32px 160px 32px 704px 32px 160px 32px 1fr;
+  grid-template-rows: auto 32px 160px 32px 458px 32px 160px 32px auto;
   grid-template-areas:
     ". i i i i i . . . . . . ."
     ". . . t . . . . . . . . ."
@@ -52,7 +52,7 @@
 }
 
 .controls {
-  margin-top: 48px;
+  margin-top: 52px;
 }
 
 .infobox {
@@ -178,12 +178,12 @@
 
 .top .rack,
 .bottom .rack {
-  height: 48px;
+  height: 52px;
 }
 
 .left .rack,
 .right .rack {
-  width: 48px;
+  width: 52px;
 }
 
 .top .rack {

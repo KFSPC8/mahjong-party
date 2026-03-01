@@ -87,7 +87,7 @@ const Controls: FunctionComponent<{
   ) {
     return (
       <div>
-        <button
+        <button style={{ marginTop: "48px" }}
           type="button"
           onClick={() => dispatchAction(ActionType.NextRound)}>
           Next round
@@ -119,12 +119,12 @@ const Controls: FunctionComponent<{
                 Draw
               </button>
             )}
-            <button
+            {/* <button
               type="button"
               disabled={!actions.has(ActionType.Discard)}
               onClick={() => setPendingAction(ActionType.Discard)}>
               Discard
-            </button>
+            </button> */}
             <button
               type="button"
               disabled={!actions.has(ActionType.Chi) || isReservedDuration}
@@ -176,7 +176,7 @@ const Controls: FunctionComponent<{
   return (
     <div>
       {message && (
-        <span>
+        <span style={{ marginTop: "48px" }}>
           <strong>{message}</strong>
         </span>
       )}

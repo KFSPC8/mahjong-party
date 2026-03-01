@@ -34,7 +34,9 @@ const Status: FunctionComponent<{
   return (
     <div>
       <strong>
-        <span>{timestamp.toLocaleTimeString()}</span> {message}
+        <span style={{ marginLeft: "32px" }}>
+          {timestamp.toLocaleTimeString()}
+        </span> {message}
       </strong>
     </div>
   );

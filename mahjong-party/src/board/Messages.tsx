@@ -77,7 +77,7 @@ const Messages: FunctionComponent<{
     <FixedSizeList
       ref={ref}
       itemSize={32}
-      height={160}
+      height={800}
       itemCount={events.length}
       width={"100%"}
       className="messages">

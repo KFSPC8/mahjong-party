@@ -208,14 +208,6 @@ const Board: FunctionComponent<{
           <Tiles tiles={hands[seat].flowers} />
           <Melds melds={hands[seat].revealed} />
           <div className="tutorial-your_tiles">{ownTiles}</div>
-        </div>
-        <Hands round={round} />
-        <Discards
-          discards={discards}
-          canDiscard={turn === seat && phase === RoundPhase.Discard}
-          discardTile={discardTile}
-        />
-        <div className="underneath">
           <Controls
             round={round}
             isReservedDuration={isReservedDuration}
@@ -228,6 +220,14 @@ const Board: FunctionComponent<{
             discardLastTile={discardLastTile}
             dispatchAction={dispatchAction}
           />
+        </div>
+        <Hands round={round} />
+        <Discards
+          discards={discards}
+          canDiscard={turn === seat && phase === RoundPhase.Discard}
+          discardTile={discardTile}
+        />
+        <div className="underneath">
           <Messages players={players} events={events} />
           <Status
             players={players}

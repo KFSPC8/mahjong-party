@@ -8,11 +8,13 @@ export default function SelectableRack({
   onTileClick,
   selecting,
   selected,
+  own,
 }: {
   tiles: Array<{ tile: string; id: number }>;
   selecting?: boolean;
   selected?: number[];
   onTileClick?: TileClickCallback;
+  own?: boolean;
 }) {
   const elements = tiles.map(({ tile, id }, index) => (
     <Tile
@@ -20,6 +22,7 @@ export default function SelectableRack({
       key={id}
       selected={selected?.includes(index)}
       onClick={onTileClick ? onTileClick(tile, index) : undefined}
+      own={own}
     />
   ));
   return (

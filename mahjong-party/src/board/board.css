@@ -1,7 +1,7 @@
 .table {
   display: grid;
   grid-template-columns: 32px 160px 32px 704px 32px 160px 32px 1fr;
-  grid-template-rows: auto 32px 160px 32px 458px 32px 160px 32px auto;
+  grid-template-rows: auto 32px 160px 32px 438px 32px 186px 32px auto;
   grid-template-areas:
     ". i i i i i . . . . . . ."
     ". . . t . . . . . . . . ."
@@ -52,7 +52,7 @@
 }
 
 .controls {
-  margin-top: 52px;
+  margin-top: 42px;
 }
 
 .infobox {
@@ -134,12 +134,27 @@
   background-image: url("tiles/back.svg");
 }
 
+.tile-own {
+  background-size: contain;
+  width: 50px;
+  height: 61px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url("tiles/back.svg");
+}
+
 .message {
   display: flex;
   align-items: center;
 }
 
 .tile.inline {
+  height: 32px;
+  width: 26px;
+  display: inline-block;
+}
+
+.tile-own.inline {
   height: 32px;
   width: 26px;
   display: inline-block;
@@ -152,7 +167,18 @@
   background-image: url("tiles/backh.svg");
 }
 
+.left .tile-own,
+.right .tile-own {
+  height: 44px;
+  width: 53px;
+  background-image: url("tiles/backh.svg");
+}
+
 .selecting .tile {
+  opacity: 0.5;
+}
+
+.selecting .tile-own {
   opacity: 0.5;
 }
 
@@ -160,7 +186,15 @@
   cursor: pointer;
 }
 
+.selectable .tile-own {
+  cursor: pointer;
+}
+
 .selecting .tile.selected {
+  opacity: 1;
+}
+
+.selecting .tile-own.selected {
   opacity: 1;
 }
 
@@ -168,7 +202,15 @@
   cursor: move;
 }
 
+.tile-own.draggable {
+  cursor: move;
+}
+
 .tile.dragging {
+  opacity: 0;
+}
+
+.tile-own.dragging {
   opacity: 0;
 }
 
@@ -176,9 +218,12 @@
   display: flex;
 }
 
-.top .rack,
-.bottom .rack {
+.top .rack {
   height: 52px;
+}
+
+.bottom .rack {
+  height: 61px;
 }
 
 .left .rack,

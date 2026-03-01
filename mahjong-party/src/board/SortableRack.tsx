@@ -8,7 +8,8 @@ const Tile: React.FC<{
   tile: string;
   index: number;
   moveTile: (from: number, to: number) => void;
-}> = ({ tile, index, moveTile }) => {
+  own?: boolean;
+}> = ({ tile, index, moveTile, own }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [, drop] = useDrop({
     accept: "tile",
@@ -69,10 +70,11 @@ const Tile: React.FC<{
   });
 
   drag(drop(ref));
+  const base = own ? "tile-own" : "tile";
   return (
     <div
       ref={ref}
-      className={isDragging ? "tile dragging" : "tile draggable"}
+      className={isDragging ? `${base} dragging` : `${base} draggable`}
       data-tile={tile}
     />
   );
@@ -81,9 +83,10 @@ const Tile: React.FC<{
 const SortableRack: React.FC<{
   tiles: Array<{ tile: string; id: number }>;
   moveTile: (from: number, to: number) => void;
-}> = ({ tiles, moveTile }) => {
+  own?: boolean;
+}> = ({ tiles, moveTile, own }) => {
   const elements = tiles.map(({ tile, id }, index) => (
-    <Tile tile={tile} index={index} key={id} moveTile={moveTile} />
+    <Tile tile={tile} index={index} key={id} moveTile={moveTile} own={own} />
   ));
   return <div className="rack">{elements}</div>;
 };

@@ -176,13 +176,14 @@ const Board: FunctionComponent<{
 
   let ownTiles: ReactElement;
   const finished = hands[seat].finished;
-  if (finished !== undefined) {
-    ownTiles = <Tiles tiles={finished} />;
+        if (finished !== undefined) {
+          ownTiles = <Tiles tiles={finished} own={true} />;
   } else if (pendingAction === null) {
     ownTiles = (
       <SortableRack
         tiles={tiles}
         moveTile={(from, to) => dispatchTiles({ type: "move", from, to })}
+              own={true}
       />
     );
   } else {
@@ -192,6 +193,7 @@ const Board: FunctionComponent<{
         selecting={pendingAction === ActionType.Chi}
         selected={selected.indexes}
         onTileClick={tileClickCallback}
+              own={true}
       />
     );
   }
@@ -205,7 +207,7 @@ const Board: FunctionComponent<{
         </Info>
         <Labels players={players} dealer={dealer} seat={seat} scores={scores} />
         <div className="bottom">
-          <Tiles tiles={hands[seat].flowers} />
+          <Tiles tiles={hands[seat].flowers} own={false} />
           <Melds melds={hands[seat].revealed} />
           <div className="tutorial-your_tiles">{ownTiles}</div>
           <Controls

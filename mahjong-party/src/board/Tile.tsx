@@ -6,14 +6,18 @@ export default function Tile({
   selected,
   inline,
   style,
+  own,
 }: {
   tile: string;
   onClick?: MouseEventHandler;
   selected?: boolean;
   inline?: boolean;
   style?: CSSProperties;
+  // when true, use the bottom-board tile styles
+  own?: boolean;
 }) {
-  const classes = ["tile"];
+  const base = own ? "tile-own" : "tile";
+  const classes = [base];
   selected && classes.push("selected");
   inline && classes.push("inline");
   return (

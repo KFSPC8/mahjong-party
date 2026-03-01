@@ -1,0 +1,42 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: mahjong-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: mahjong
+      POSTGRES_PASSWORD: mahjong
+      POSTGRES_DB: mahjong
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./mahjong.go
+      dockerfile: Dockerfile
+    container_name: mahjong-backend
+    ports:
+      - "8080:8080"
+    environment:
+      DATABASE_URL: postgres://mahjong:mahjong@postgres:5432/mahjong?sslmode=disable
+      PARLOUR_SESSION_AUTH_KEY: ${PARLOUR_SESSION_AUTH_KEY}
+      PARLOUR_SESSION_ENC_KEY:  ${PARLOUR_SESSION_ENC_KEY}
+      HOST: "0.0.0.0"
+      PORT: "8080"
+    depends_on:
+      - postgres
+
+  frontend:
+    build:
+      context: ./mahjong-party
+      dockerfile: Dockerfile
+    container_name: mahjong-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:

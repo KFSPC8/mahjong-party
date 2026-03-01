@@ -49,6 +49,8 @@
 
 .controls button {
   margin-right: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 .controls {

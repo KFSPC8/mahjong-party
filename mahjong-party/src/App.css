@@ -1,9 +1,9 @@
 @import "vendor/sakura.css";
 
 .table {
-  width: 100vw !important;
+  width: 90vw !important;
   position: absolute;
-  left: 0;
+  left: 5%;
 }
 
 .results th {

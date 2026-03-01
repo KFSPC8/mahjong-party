@@ -79,7 +79,7 @@ const Messages: FunctionComponent<{
       itemSize={32}
       height={800}
       itemCount={events.length}
-      width={"100%"}
+      width={"90%"}
       className="messages">
       {({ index, style }) => (
         <Message players={players} event={events[index]} style={style} />

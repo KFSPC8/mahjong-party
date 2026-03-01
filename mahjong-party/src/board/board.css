@@ -1,16 +1,16 @@
 .table {
   display: grid;
-  grid-template-columns: 1fr 32px 144px 32px 700px 32px 144px 32px 1fr;
+  grid-template-columns: 32px 144px 32px 700px 32px 144px 32px 1fr;
   grid-template-rows: auto 32px 144px 32px 458px 32px 144px 32px auto;
   grid-template-areas:
-    ". . i i i i i . . . . . . ."
-    ". . . . t . . . . . . . . ."
-    ". . L . T . R . u u u u u ."
-    ". . L . . . R . . . . . . ."
-    ". l L . C . R r . . . . . ."
-    ". . L . . . R . . . . . . ."
-    ". . L . B . R . . . . . . ."
-    ". . . . b . . . . . . . . ." ;
+    ". i i i i i . . . . . . ."
+    ". . . t . . . . . . . . ."
+    ". L . T . R . u u u u u ."
+    ". L . . . R . . . . . . ."
+    "l L . C . R r . . . . . ."
+    ". L . . . R . . . . . . ."
+    ". L . B . R . . . . . . ."
+    ". . . b . . . . . . . . ." ;
 }
 
 .tutorial-board {

@@ -1,7 +1,7 @@
 .table {
   display: grid;
   grid-template-columns: 32px 160px 32px 704px 32px 160px 32px 1fr;
-  grid-template-rows: auto 32px 160px 32px 438px 32px 186px 32px auto;
+  grid-template-rows: auto 44px 160px 32px 408px 32px 186px 44px auto;
   grid-template-areas:
     ". i i i i i . . . . . . ."
     ". . . t . . . . . . . . ."
@@ -54,7 +54,7 @@
 }
 
 .controls {
-  margin-top: 42px;
+  margin-top: 12px;
 }
 
 .infobox {
@@ -99,6 +99,7 @@
   grid-area: b;
   text-align: center;
   line-height: 32px;
+  margin-top: 56px;
 }
 
 .label-right {
@@ -120,6 +121,50 @@
   line-height: 32px;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
+}
+
+/* Beautified player labels */
+.label-bottom > div,
+.label-top > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 12px;
+  border-radius: 10px;
+  background: linear-gradient(#ffffff, #f5f7f9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  color: #1f2937;
+}
+
+.label-right > div,
+.label-left > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border-radius: 10px;
+  background: linear-gradient(#ffffff, #f5f7f9);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.06);
+  color: #1f2937;
+  writing-mode: vertical-lr;
+}
+
+.label-right > div { line-height: 1; }
+.label-left > div { line-height: 1; }
+
+.label-bottom .score,
+.label-top .score,
+.label-right .score,
+.label-left .score {
+  font-weight: 700;
+  color: #0b6b3a;
+  background: rgba(11,107,58,0.06);
+  padding: 2px 6px;
+  border-radius: 6px;
+  margin-left: 6px;
+  display: inline-block;
 }
 
 .messages {

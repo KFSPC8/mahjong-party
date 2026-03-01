@@ -1,5 +1,5 @@
 # Mahjong Party
-![Screenshot of a game in progress](https://user-images.githubusercontent.com/11734309/91702995-1f48fa00-ebac-11ea-9ed0-68572c8a077c.png)
+<img width="2108" height="1263" alt="image" src="https://github.com/user-attachments/assets/19bbc422-2d97-45ad-8317-2009228aeb6a" />
 
 ## To build
 1. Generate 2 keys using:
